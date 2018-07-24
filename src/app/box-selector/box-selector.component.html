@@ -1,0 +1,36 @@
+<form #boxselector="ngForm" class="editForm" novalidate>
+    <div class="tab-pane fade in active">
+        <h4 class="head text-center">{{title}}</h4>
+        <br/>
+        <div class='row'>
+            <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+                <div class="row">
+                    <div class='col-xs-6 col-sm-6'>
+                        <div class="form-group">
+                            <input type="radio" value="white_box" id="white_box" name="box" required [(ngModel)]="boxselector.box" >
+                            <label for="white_box" class="main_radio" (mouseover)="hover=true" (mouseleave)="hover=false">
+		   							<div class="radio" [ngStyle]="{border: hover==true  ? 'solid 2px red' : '' }" >
+		   								<div class="radio1" >White Box</div>
+		   							</div>
+   							</label>
+
+                        </div>
+                    </div>
+                    <div class='col-xs-6 col-sm-6'>
+                        <div class="form-group">
+                           <input type="radio" value="black_box" id="black_box" name="box" required [(ngModel)]="boxselector.box" >
+                           <label for="black_box" class="main_radio"  (mouseover)="hover_black=true" (mouseleave)="hover_black=false">
+		   							<div class="radio"  [ngStyle]="{border: hover_black==true  ? 'solid 2px red' : '' }" >
+		   								<div class="radio1" >Black Box</div>
+		   							</div>
+   							</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <button class="btn btn-success btn-outline-rounded btn-info" [disabled]="!boxselector.valid" (click)="goToNext(boxselector)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

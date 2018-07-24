@@ -1,0 +1,42 @@
+<div class="board-inner" id="status-buttons">
+    <ul class="nav nav-tabs" id="myTab">
+        <div class="liner"></div>
+                    
+        <!-- circular user icon -->
+        <li>
+            <a routerLink="/app-box-selector" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="app-box-selector">
+                <span class="round-tabs one">
+                </span>
+            </a>
+        </li>
+
+        <!-- circular tasks icon -->
+         <li>
+            <a routerLink="/work" routerLinkActive="active" data-toggle="tab" title="work">
+                <span class="round-tabs two">
+                </span> 
+            </a>
+        </li>
+
+        <!-- circular home icon -->
+        <li>
+            <a routerLink="/address" routerLinkActive="active" data-toggle="tab" title="address">
+                <span class="round-tabs three">
+                </span>
+            </a>
+        </li>
+
+        <!-- circular ok icon -->
+        <li>
+            <a routerLink="/result" routerLinkActive="active" data-toggle="tab" title="completed">
+                <span class="round-tabs four">
+                </span>
+            </a>
+        </li>
+                
+    </ul>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Close the Splash screen -->
+<!--<script src="assets/js/loading-bars.js"></script>-->
