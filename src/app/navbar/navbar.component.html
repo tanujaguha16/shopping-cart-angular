@@ -3,7 +3,8 @@
         <div class="liner"></div>
                     
         <!-- circular user icon -->
-        <li>
+        
+        <li [ngClass]="(current_url=='/work')||(current_url=='/address')?'green':''" >
             <a routerLink="/app-box-selector" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="app-box-selector">
                 <span class="round-tabs one">
                 </span>

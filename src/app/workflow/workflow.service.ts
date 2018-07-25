@@ -5,7 +5,7 @@ import { STEPS }              from './workflow.model';
 @Injectable()
 export class WorkflowService {
     private workflow = [
-        { step: STEPS.personal, valid: false },
+        { step: STEPS.boxselector, valid: false },
         { step: STEPS.work, valid: false },
         { step: STEPS.address, valid: false },
         { step: STEPS.result, valid: false }
@@ -36,6 +36,8 @@ export class WorkflowService {
         var redirectToStep = '';
         for (var i = 0; i < this.workflow.length && !found && valid; i++) {
             let item = this.workflow[i];
+            alert(item.step);
+            alert(step);
             if (item.step === step) {
                 found = true;
                 redirectToStep = '';

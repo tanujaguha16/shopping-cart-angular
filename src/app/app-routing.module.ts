@@ -13,10 +13,9 @@ import { BoxSelectorComponent } from './box-selector/box-selector.component';
 export const appRoutes: Routes = [
     // 1st Route
     { path: 'app-box-selector',  component: BoxSelectorComponent },
-    // 1st Route
-    { path: 'personal',  component: PersonalComponent },
+    
     // 2nd Route
-    { path: 'work',  component: WorkComponent },
+    { path: 'work',  component: WorkComponent},
     // 3rd Route
     { path: 'address',  component: AddressComponent, canActivate: [WorkflowGuard] },
     // 4th Route

@@ -1,6 +1,8 @@
 export const STEPS = {
-    personal: 'personal',
+    boxselector:'app-box-selector',
     work: 'work',
     address: 'address',
-    result: 'result'
+    result: 'result',
+    personal: 'personal',
+    
 }

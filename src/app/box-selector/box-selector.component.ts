@@ -21,6 +21,8 @@ export class BoxSelectorComponent implements OnInit {
   }
   
     goToNext(form: any) {
+        this.formDataService.setBoxSelector(this.box_selector);
+        console.log('nav1' + this.formDataService.boxValid)
         this.router.navigate(['/work']);
     }
 

@@ -10,11 +10,12 @@ import { WorkflowService } from './workflow.service';
 
 @Injectable()
 export class WorkflowGuard implements CanActivate {
+    secondtab = 0;
     constructor(private router: Router, private workflowService: WorkflowService) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         let path: string = route.routeConfig.path;
-
+        alert(path);
         return this.verifyWorkFlow(path);
     }
 
@@ -29,7 +30,7 @@ export class WorkflowGuard implements CanActivate {
             this.router.navigate([url]);
             return false;
         };
-
+        this.secondtab = 1;
         return true;
     }
 }

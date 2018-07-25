@@ -72,6 +72,12 @@ li.active span.round-tabs.one{
    /* border: 2px solid #ddd;
     color: rgb(34, 194, 34);*/
 }
+li.green span.round-tabs.one{
+    
+    border: 2px solid rgb(144,245,0);
+   /* border: 2px solid #ddd;
+    color: rgb(34, 194, 34);*/
+}
 
 span.round-tabs.two{
     /*color: #febe29;border: 2px solid #febe29;*/
