@@ -8,7 +8,7 @@ export class FormData {
     state: string = '';
     zip: string = '';
     box: string = '';
-    boxValid : boolean = false;
+ 
 
     clear() {
         this.firstName = '';
@@ -36,5 +36,5 @@ export class Address {
 }
 export class BoxSelector {
     box: string = '';
-    boxValid : boolean = false;
+    
 }

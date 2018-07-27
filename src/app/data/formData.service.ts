@@ -11,7 +11,7 @@ export class FormDataService {
     private isPersonalFormValid: boolean = false;
     private isWorkFormValid: boolean = false;
     private isAddressFormValid: boolean = false;
-    private boxValid: boolean = false;
+   
 
     constructor(private workflowService: WorkflowService) { 
     }
@@ -46,9 +46,9 @@ export class FormDataService {
     }
     setBoxSelector(data: BoxSelector) {
         // Update the Personal data only when the Personal Form had been validated successfully
-        this.boxValid = true;
+      
         this.formData.box = data.box;
-        console.log(this.formData.box);
+        this.workflowService.validateStep(STEPS.boxselector);
     }
     getWork() : string {
         // Return the work type
