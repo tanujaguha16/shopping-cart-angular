@@ -32,7 +32,11 @@
 #status-buttons a.active span.round-tabs.one { 
     /*background: rgb(34, 194, 34); */
     border: 2px solid rgb(255, 0, 0);
-    color: #fff
+    color: #fff;
+}
+a.active span.bold-text { 
+    
+    color: rgb(255, 0, 0);
 }
 
 #status-buttons a.active span.round-tabs.two { 

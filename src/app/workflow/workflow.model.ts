@@ -1,6 +1,6 @@
 export const STEPS = {
     boxselector:'app-box-selector',
-    work: 'work',
+    itemselector: 'itemselector',
     address: 'address',
     result: 'result',
     personal: 'personal',

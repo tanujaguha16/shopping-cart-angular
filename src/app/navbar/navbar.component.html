@@ -4,20 +4,24 @@
                     
         <!-- circular user icon -->
         
-        <li [ngClass]="(current_url=='/work')||(current_url=='/address')?'green':''" >
+        <li [ngClass]="(current_url=='/itemselector')||(current_url=='/address')?'green':''" >
             <a routerLink="/app-box-selector" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="app-box-selector">
                 <span class="round-tabs one">
                 </span>
+                
             </a>
+            <span class="bold-text">Step 1<br/>
+            Choose your box color</span>
         </li>
-
-        <!-- circular tasks icon -->
-         <li>
-            <a routerLink="/work" routerLinkActive="active" data-toggle="tab" title="work">
-                <span class="round-tabs two">
-                </span> 
+        <li>
+            <a routerLink="/itemselector" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="app-box-selector">
+                <span class="round-tabs one">
+                </span>
             </a>
+            <span class="bold-text">Step 2<br/>
+            Choose your item</span>
         </li>
+        
 
         <!-- circular home icon -->
         <li>

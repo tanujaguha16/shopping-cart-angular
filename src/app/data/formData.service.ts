@@ -1,6 +1,6 @@
 import { Injectable }                        from '@angular/core';
 
-import { FormData, Personal, Address, BoxSelector}       from './formData.model';
+import { FormData, ItemSelector, Address, BoxSelector , Personal,Items}       from './formData.model';
 import { WorkflowService }                   from '../workflow/workflow.service';
 import { STEPS }                             from '../workflow/workflow.model';
 
@@ -8,6 +8,7 @@ import { STEPS }                             from '../workflow/workflow.model';
 export class FormDataService {
 
     private formData: FormData = new FormData();
+    private item: Items = new Items();
     private isPersonalFormValid: boolean = false;
     private isWorkFormValid: boolean = false;
     private isAddressFormValid: boolean = false;
@@ -26,7 +27,17 @@ export class FormDataService {
         return personal;
     }
     
-
+    getitems(items){
+        this.item.item_id = items.id;
+        this.item.item_name = items.name;
+        this.item.item_price = items.price;
+        console.log(this.item);
+    }
+    senditems(){
+        this.getitems({'id':1,'name':'ABC','price':'8$'});
+        this.getitems({'id':1,'name':'BCD','price':'8$'});
+        this.getitems({'id':1,'name':'EFG','price':'8$'});
+    }
     setPersonal(data: Personal) {
         // Update the Personal data only when the Personal Form had been validated successfully
         this.isPersonalFormValid = true;
@@ -39,7 +50,9 @@ export class FormDataService {
     getBoxSelector(): BoxSelector {
         // Return the Personal data
         var boxselector: BoxSelector = {
-            box: this.formData.box
+            box: this.formData.box,
+            price: this.formData.price ,
+            quantity: this.formData.quantity ,
             
         };
         return boxselector;
@@ -48,7 +61,24 @@ export class FormDataService {
         // Update the Personal data only when the Personal Form had been validated successfully
       
         this.formData.box = data.box;
+        this.formData.price = '$8';
+        this.formData.quantity = 1;
         this.workflowService.validateStep(STEPS.boxselector);
+    }
+    
+    getItemSelector(): ItemSelector {
+        // Return the Personal data
+        var itemselector: ItemSelector = {
+            item:  this.formData.item
+            
+        };
+        console.log('yes'+itemselector.item);
+        return itemselector;
+    }
+    
+    setItemSelector(data: ItemSelector) {
+        this.formData.item.push(''+data.item); 
+        this.workflowService.validateStep(STEPS.itemselector);
     }
     getWork() : string {
         // Return the work type
@@ -60,7 +90,7 @@ export class FormDataService {
         this.isWorkFormValid = true;
         this.formData.work = data;
         // Validate Work Step in Workflow
-        this.workflowService.validateStep(STEPS.work);
+        //this.workflowService.validateStep(STEPS.work);
     }
 
     getAddress() : Address {

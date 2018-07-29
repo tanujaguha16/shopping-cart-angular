@@ -19,6 +19,7 @@ import { AppRoutingModule }   from './app-routing.module';
 /* Shared Service */
 import { FormDataService }    from './data/formData.service';
 import { WorkflowService }    from './workflow/workflow.service';
+import { ItemselectorComponent } from './itemselector/itemselector.component';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { WorkflowService }    from './workflow/workflow.service';
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService }],
-    declarations: [ AppComponent, NavbarComponent, PersonalComponent, WorkComponent, AddressComponent, ResultComponent, BoxSelectorComponent ],
+    declarations: [ AppComponent, NavbarComponent, PersonalComponent, WorkComponent, AddressComponent, ResultComponent, BoxSelectorComponent, ItemselectorComponent ],
     bootstrap:    [ AppComponent ]
 })
 

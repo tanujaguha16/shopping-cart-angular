@@ -1,0 +1,53 @@
+.main-box {
+	width: 851px;
+    border: 2px solid #ddd;
+    margin: 2px;
+    height: auto;
+    min-height: 348px;
+}
+.medium-box{
+	border-right: 2px solid #ddd;
+    height: auto;
+    min-height: 347px;
+}
+.small-box{
+	width: 150px;
+    margin: 15px 2px 0px 2px;
+    height: 150px;
+    padding: 58px 35px 9px 42px;
+    background-color: grey;
+    color: white;
+}
+.semi-medium-box{
+    border-bottom: 2px solid #ddd;
+    height: auto;
+    min-height: 232px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 10px;
+}
+.selectpicker{
+	border: 1px solid black;
+	width: 99%;
+    padding: 11px;
+    margin: 25px 0px 2px 1px;
+    text-align: center;
+    text-align-last: center;
+}
+.item-box{
+	width: 200px;
+    margin: 15px 2px 0px 0px;
+    height: 200px;
+    padding: 58px 35px 9px 42px;
+    border: 2px solid grey;
+    background-color: #AFC3CC;
+    color: white;
+}
+.custom-col{
+	padding-left: 21px;
+    margin-left: -4px
+}
+.item-text h4{
+	font-size : 17px;
+	margin-top : -6px;
+}

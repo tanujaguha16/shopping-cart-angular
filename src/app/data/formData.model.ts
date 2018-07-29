@@ -8,6 +8,9 @@ export class FormData {
     state: string = '';
     zip: string = '';
     box: string = '';
+    price : string = '';
+    item: Array<string> = ["hello"];
+    quantity : number = 1;
  
 
     clear() {
@@ -18,6 +21,7 @@ export class FormData {
         this.street = '';
         this.city = '';
         this.state = '';
+        this.price = '';
         this.zip = '';
     }
 }
@@ -36,5 +40,17 @@ export class Address {
 }
 export class BoxSelector {
     box: string = '';
+    quantity : number = 1;
+    price : string ='';
+
+}
+export class ItemSelector {
+    item: Array<string> = ["hello"];
+    
+}
+export class Items {
+    item_id: number = 1;
+    item_name: string = '';
+    item_price: string ='';
     
 }

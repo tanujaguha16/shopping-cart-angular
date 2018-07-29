@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class='col-xs-6 col-sm-6'>
                         <div class="form-group">
-                            <input type="radio" value="white_box" id="white_box" name="box" required [(ngModel)]="box_selector.box" >
+                            <input type="radio" value="White box" id="white_box" name="box" required [(ngModel)]="box_selector.box" >
                             <label for="white_box" class="main_radio" (mouseover)="hover=true" (mouseleave)="hover=false">
 		   							<div class="radio" [ngStyle]="{border: hover==true  ? 'solid 2px red' : '' }" >
 		   								<div class="radio1" >White Box</div>
@@ -18,7 +18,7 @@
                     </div>
                     <div class='col-xs-6 col-sm-6'>
                         <div class="form-group">
-                           <input type="radio" value="black_box" id="black_box" name="box" required [(ngModel)]="box_selector.box" >
+                           <input type="radio" value="Black box" id="black_box" name="box" required [(ngModel)]="box_selector.box" >
                            <label for="black_box" class="main_radio"  (mouseover)="hover_black=true" (mouseleave)="hover_black=false">
 		   							<div class="radio"  [ngStyle]="{border: hover_black==true  ? 'solid 2px red' : '' }" >
 		   								<div class="radio1" >Black Box</div>

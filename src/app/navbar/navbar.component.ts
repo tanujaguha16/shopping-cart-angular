@@ -9,7 +9,6 @@ import { Router , NavigationEnd} from '@angular/router';
 })
 export class NavbarComponent  {
   title : "Step 1 of 4 ";
-  box_selector:BoxSelector;
   current_url: any;
   constructor( private router: Router) { 
 

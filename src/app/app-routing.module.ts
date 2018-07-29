@@ -9,10 +9,12 @@ import { ResultComponent }      from './result/result.component';
 import { WorkflowGuard }        from './workflow/workflow-guard.service';
 import { WorkflowService }      from './workflow/workflow.service';
 import { BoxSelectorComponent } from './box-selector/box-selector.component';
+import { ItemselectorComponent } from './itemselector/itemselector.component';
 
 export const appRoutes: Routes = [
     // 1st Route
     { path: 'app-box-selector',  component: BoxSelectorComponent },
+    { path: 'itemselector',  component: ItemselectorComponent , canActivate: [WorkflowGuard] },
     { path: 'personal',  component: PersonalComponent },
     // 2nd Route
     { path: 'work',  component: WorkComponent , canActivate: [WorkflowGuard]},
