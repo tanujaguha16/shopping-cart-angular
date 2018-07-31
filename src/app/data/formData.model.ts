@@ -9,7 +9,7 @@ export class FormData {
     zip: string = '';
     box: string = '';
     price : string = '';
-    item: Array<string> = ["hello"];
+    item: string[] = [];
     quantity : number = 1;
  
 
@@ -45,7 +45,7 @@ export class BoxSelector {
 
 }
 export class ItemSelector {
-    item: Array<string> = ["hello"];
+    item: string[] = [];
     
 }
 export class Items {

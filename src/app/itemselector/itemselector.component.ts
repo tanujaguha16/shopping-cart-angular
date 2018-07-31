@@ -9,7 +9,7 @@ import { ItemSelector }            from '../data/formData.model';
 export class ItemselectorComponent implements OnInit {
   @Input() formData;
   itemselector:ItemSelector;
-  @Input() item_display ;
+  @Input() itemData ;
   constructor(private formDataService: FormDataService) { 
   	this.formDataService.senditems();
   }
@@ -17,12 +17,13 @@ export class ItemselectorComponent implements OnInit {
   ngOnInit() {
        this.formData = this.formDataService.getBoxSelector();
        this.itemselector = this.formDataService.getItemSelector();
+       this.itemData = this.formDataService.getItemData();
        
   }
 
   add_to_cart(item: any) {
   
-  		this.itemselector.item = item;
+  		  this.itemselector.item = item;
         this.formDataService.setItemSelector(this.itemselector);
        
         

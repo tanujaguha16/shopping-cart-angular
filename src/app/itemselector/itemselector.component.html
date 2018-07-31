@@ -10,6 +10,11 @@
     		<div class="col-sm-2 small-box">
     		{{formData.box}}
     		</div>
+    		 <div *ngFor="let item of itemData.item">
+		    	<div class="col-sm-2 small-box">
+		         {{item}}
+		        </div>
+		     </div>
     	</div>
     	<div class="col-sm-4">
     		<div class="semi-medium-box">
@@ -19,7 +24,6 @@
     		</div>
     		<div class="total-box">
     		</div>
-    		{{itemselector.item}}
     	</div>
     </div>
   </div>

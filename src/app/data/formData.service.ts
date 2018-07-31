@@ -75,10 +75,15 @@ export class FormDataService {
         console.log('yes'+itemselector.item);
         return itemselector;
     }
+     getItemData(): FormData {
+        // Return the entire Form Data
+        return this.formData;
+    }
     
     setItemSelector(data: ItemSelector) {
         this.formData.item.push(''+data.item); 
-        this.workflowService.validateStep(STEPS.itemselector);
+
+        //this.workflowService.validateStep(STEPS.itemselector);
     }
     getWork() : string {
         // Return the work type

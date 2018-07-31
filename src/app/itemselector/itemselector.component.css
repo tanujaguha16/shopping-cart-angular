@@ -4,6 +4,7 @@
     margin: 2px;
     height: auto;
     min-height: 348px;
+    overflow: auto;
 }
 .medium-box{
 	border-right: 2px solid #ddd;
@@ -12,7 +13,7 @@
 }
 .small-box{
 	width: 150px;
-    margin: 15px 2px 0px 2px;
+    margin: 12px 6px 2px 6px;
     height: 150px;
     padding: 58px 35px 9px 42px;
     background-color: grey;
