@@ -80,11 +80,43 @@ export class FormDataService {
         return this.formData;
     }
     
-    setItemSelector(data: ItemSelector) {
-        this.formData.item.push(''+data.item); 
+    setItemSelector(data: string) {
 
-        //this.workflowService.validateStep(STEPS.itemselector);
+         
+        var arr = this.formData.item;
+        //var i = 0;
+        if(arr.some(e => e.name ===data)){
+           this.formData.item.forEach(element => {
+               if(element.name == data)
+                element.count = element.count+1;
+              
+            });  
+        }
+        else   
+        this.formData.item.push({ count: 1, name: data }); 
+      
     }
+     removeItemSelector(data: string) {
+
+         
+        var arr = this.formData.item;
+        var listToDelete = [0];
+        //var i = 0;
+        if(arr.some(e => e.name ===data)){
+           this.formData.item.forEach(element => {
+               if(element.name == data){
+                element.count = element.count == 0 ? 0 : element.count-1;
+                }
+                if(element.count == 0){
+                    var index = this.formData.item.indexOf(element);
+                    this.formData.item.splice(index, 1);
+                }
+            });  
+                }
+        }
+       
+      
+   
     getWork() : string {
         // Return the work type
         return this.formData.work;
