@@ -23,7 +23,13 @@
     		    {{formData.quantity}}
     			{{formData.box}}
     			{{formData.price}}
+    			<div *ngFor="let item of itemData.item">
+		    	 {{item.count}}
+		         {{item.name}}
+    			 {{item.price}}
+		     </div>
     		</div>
+
     		<div class="total-box">
     		</div>
     	</div>
@@ -49,9 +55,9 @@
 				Add to box
 			</button>
 			<div class="add-box" *ngIf="itemsingle.selected">
-				<button (click)="remove_to_cart(itemsingle.name)">-</button>
-				 {{itemsingle.count}}
-				<button (click)="add_to_cart(itemsingle.name)">+</button>	
+				<button (click)="remove_to_cart(itemsingle.name)" class="minus">-</button>
+				 <span class="count">{{itemsingle.count}}</span>
+				<button (click)="add_to_cart(itemsingle.name)" class="plus">+</button>	
 			</div>
 		</div>	
 		<div class="item-text">

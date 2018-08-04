@@ -40,22 +40,29 @@ export class ItemselectorComponent implements OnInit {
   add_to_cart(item: string) {
         this.formDataService.setItemSelector(item);
         this.items.forEach(element => {
-               if(element.name == item)
+               if(element.name == item){
                 element.selected = true;
                 let item1 = this.itemData.item.filter(it => it.name === item)[0];
                 element.count = item1.count;
+                }
             });  
     }
   remove_to_cart(item: string) {
+  
         this.formDataService.removeItemSelector(item);
         this.items.forEach(element => {
             if(element.name == item){
                 element.selected = true;
+                if(this.itemData.item.some(e => e.name ==item)){
                 let item2 = this.itemData.item.filter(it => it.name === item)[0];
                 element.count = item2.count;
+                }
+                else
+                element.count = 0;
                 element.selected = (element.count == 0)? false: true;
                 }
-            });  
+            }); 
+            
     }
 
 }

@@ -81,15 +81,11 @@ export class FormDataService {
     }
     
     setItemSelector(data: string) {
-
-         
         var arr = this.formData.item;
-        //var i = 0;
-        if(arr.some(e => e.name ===data)){
+        if(arr.some(e => e.name ==data)){
            this.formData.item.forEach(element => {
                if(element.name == data)
                 element.count = element.count+1;
-              
             });  
         }
         else   
@@ -100,19 +96,18 @@ export class FormDataService {
 
          
         var arr = this.formData.item;
-        var listToDelete = [0];
-        //var i = 0;
-        if(arr.some(e => e.name ===data)){
+        
            this.formData.item.forEach(element => {
                if(element.name == data){
-                element.count = element.count == 0 ? 0 : element.count-1;
+               if(element.count >0)
+                    element.count = element.count-1;
+               
                 }
                 if(element.count == 0){
                     var index = this.formData.item.indexOf(element);
                     this.formData.item.splice(index, 1);
                 }
             });  
-                }
         }
        
       

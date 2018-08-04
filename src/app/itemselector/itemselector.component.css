@@ -70,4 +70,25 @@
     background-color: white;
     margin-left: -42px;
     height: 35px;
+    border: none;
 }
+.minus{
+    background: none;
+    height: 35px;
+    width: 46px;
+    border: none;
+    border-right: 1px solid black;
+}
+.plus{
+    background: none;
+    height: 35px;
+    width: 45px;
+    border: none;
+    border-left: 1px solid black;
+}
+.count{
+    margin-left: 45px;
+    margin-right: 45px;
+}
+.minus:focus {outline:0;}
+.plus:focus {outline:0;}
