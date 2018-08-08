@@ -1,5 +1,18 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
 /* written by riliwan balogun http://www.facebook.com/riliwan.rabo*/
+ .titlehead{
+    font-weight: 100;
+    margin-top: 10px;
+    font-size: 17px;
+    margin-bottom: -7px;
+}
+ .subtitle{
+    margin-top: 7px;
+    font-weight: bolder;
+}
+.nav-tabs{
+    border-bottom : 0px !important;
+}
 .board{
     width: 75%;
     margin: 60px auto;
@@ -28,14 +41,14 @@ p.narrow{
 }
 
 .liner{
-    height: 2px;
+    height: 4px;
     background: #ddd;
     position: absolute;
-    width: 74%;
+    width: 100%;
     margin: 0 auto;
-    left: -14px;
+    left: -12px;
     right: 0;
-    top: 32%;
+    top: 31%;
     z-index: 1;
 }
 

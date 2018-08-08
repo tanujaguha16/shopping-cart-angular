@@ -4,6 +4,7 @@
 .board .title{
     text-align: center;
     padding-top: 18px;
+    font-weight: bold;
 }
 .tab-content .choice {
   text-align: center;

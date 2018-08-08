@@ -12,6 +12,7 @@ export class FormDataService {
     private isPersonalFormValid: boolean = false;
     private isWorkFormValid: boolean = false;
     private isAddressFormValid: boolean = false;
+    public total:number = 0;
    
 
     constructor(private workflowService: WorkflowService) { 
@@ -28,10 +29,10 @@ export class FormDataService {
     }
     
     getitems(items){
-        this.item.item_id = items.id;
-        this.item.item_name = items.name;
-        this.item.item_price = items.price;
-        console.log(this.item);
+        this.item.id = items.id;
+        this.item.name = items.name;
+        this.item.price = items.price;
+        //console.log(this.item);
     }
     senditems(){
         this.getitems({'id':1,'name':'ABC','price':'8$'});
@@ -55,14 +56,17 @@ export class FormDataService {
             quantity: this.formData.quantity ,
             
         };
+        
         return boxselector;
     }
     setBoxSelector(data: BoxSelector) {
         // Update the Personal data only when the Personal Form had been validated successfully
       
         this.formData.box = data.box;
-        this.formData.price = '$8';
+        this.formData.price = 8;
         this.formData.quantity = 1;
+        this.total = this.total>0?this.total-this.formData.price:this.total;
+        this.total = this.total+this.formData.price;
         this.workflowService.validateStep(STEPS.boxselector);
     }
     
@@ -72,7 +76,7 @@ export class FormDataService {
             item:  this.formData.item
             
         };
-        console.log('yes'+itemselector.item);
+        
         return itemselector;
     }
      getItemData(): FormData {
@@ -80,28 +84,36 @@ export class FormDataService {
         return this.formData;
     }
     
-    setItemSelector(data: string) {
+    setItemSelector(data: Items) {
         var arr = this.formData.item;
-        if(arr.some(e => e.name ==data)){
+        //console.log(data.price);
+        if(arr.some(e => e.name ==data.name)){
            this.formData.item.forEach(element => {
-               if(element.name == data)
+               if(element.name == data.name){
                 element.count = element.count+1;
+                element.price = data.price*element.count;
+                this.total = this.total + data.price
+               
+            }
             });  
         }
-        else   
-        this.formData.item.push({ count: 1, name: data }); 
+        else{
+        this.formData.item.push({ count: 1, name: ''+data.name, price:data.price });
+        this.total = this.total + data.price;
+        
+        } 
       
     }
-     removeItemSelector(data: string) {
+     removeItemSelector(data: Items) {
 
          
         var arr = this.formData.item;
-        
            this.formData.item.forEach(element => {
-               if(element.name == data){
+               if(element.name == data.name){
                if(element.count >0)
                     element.count = element.count-1;
-               
+                    element.price = data.price*element.count;
+                    this.total = this.total - data.price;
                 }
                 if(element.count == 0){
                     var index = this.formData.item.indexOf(element);

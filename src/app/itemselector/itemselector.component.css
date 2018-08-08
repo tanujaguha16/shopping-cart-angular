@@ -5,6 +5,7 @@
     height: auto;
     min-height: 348px;
     overflow: auto;
+    padding-right: 5px;
 }
 .medium-box{
 	border-right: 2px solid #ddd;
@@ -12,10 +13,10 @@
     min-height: 347px;
 }
 .small-box{
-	width: 150px;
-    margin: 12px 6px 2px 6px;
-    height: 150px;
-    padding: 58px 35px 9px 42px;
+	width: 120px;
+    margin: 12px 12px 0px 0px;
+    height: 120px;
+    padding: 47px 35px 9px 42px;
     background-color: grey;
     color: white;
 }
@@ -92,3 +93,19 @@
 }
 .minus:focus {outline:0;}
 .plus:focus {outline:0;}
+h4.semi-medium-heading {
+    text-align: center;
+    font-weight: bold;
+}
+.total-box{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+}
+.black_button{
+    margin-top: 7px;
+    background-color: black;
+    color: white;
+    width: 201px;
+    height: 35px;
+}

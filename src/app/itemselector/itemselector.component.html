@@ -1,7 +1,7 @@
 <div class="full-tab-container">
 <div class="row">
-	<h3 class="text-center">Step 2 Of 3</h3>
-	<h2 class="text-center">Choose Your Item</h2>
+	<p class="text-center titlehead">Step 2 Of 3</p>
+	<h4 class="text-center subtitle">Choose Your Item</h4>
 </div>
 <div class="row">
   <div class="col-sm-12">
@@ -20,21 +20,27 @@
     	</div>
     	<div class="col-sm-4">
     		<div class="semi-medium-box">
-    		    {{formData.quantity}}
-    			{{formData.box}}
-    			{{formData.price}}
-    			<div *ngFor="let item of itemData.item">
-		    	 {{item.count}}
-		         {{item.name}}
-    			 {{item.price}}
-		     </div>
-    		</div>
-
-    		<div class="total-box">
-    		</div>
+    		   <h4 class='semi-medium-heading'>Box Contents</h4>
+			   <div class = "row">
+			    	<div class="col-sm-2">{{formData.quantity}}</div>
+					<div class="col-sm-7">{{formData.box}}</div>
+					<div class="col-sm-3">${{formData.price}}</div>
+			   </div>
+			   <div *ngFor="let item of itemData.item">
+					<div class = "row">
+		    	 		<div class="col-sm-2">{{item.count}}</div>
+		         		<div class="col-sm-7">{{item.name}}</div>
+				 		<div class="col-sm-3">${{item.price}}</div>
+		     		</div>
+			   </div>
+    	</div>
+    	<div class="total-box">
+    		     <span class="box_subtotal">Box Subtotal:${{total}}</span>
+    		     <button class="black_button">COMPLETE BOX</button>
     	</div>
     </div>
   </div>
+</div>
 </div>
 <div class="row">
 	<div class="col-sm-6">
@@ -51,13 +57,13 @@
 <div class="row">
 	<div *ngFor="let itemsingle of items" class="col-sm-3 custom-col"> 
 		<div class="item-box">
-			<button class="add-box"  *ngIf="!itemsingle.selected"  (click)="add_to_cart(itemsingle.name)">
+			<button class="add-box"  *ngIf="!itemsingle.selected"  (click)="add_to_cart(itemsingle)">
 				Add to box
 			</button>
 			<div class="add-box" *ngIf="itemsingle.selected">
-				<button (click)="remove_to_cart(itemsingle.name)" class="minus">-</button>
+				<button (click)="remove_to_cart(itemsingle)" class="minus">-</button>
 				 <span class="count">{{itemsingle.count}}</span>
-				<button (click)="add_to_cart(itemsingle.name)" class="plus">+</button>	
+				<button (click)="add_to_cart(itemsingle)" class="plus">+</button>	
 			</div>
 		</div>	
 		<div class="item-text">
@@ -66,7 +72,6 @@
 			<p>Price : {{itemsingle.price}}</p>
 		</div>
 	</div>
-	
-</div>
+
 </div>
 <hr/>
