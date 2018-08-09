@@ -7,10 +7,7 @@ import { AppComponent }       from './app.component';
 import { NavbarComponent }    from './navbar/navbar.component';
 
 /* Feature Components */
-import { PersonalComponent }  from './personal/personal.component';
-import { WorkComponent }      from './work/work.component';
-import { AddressComponent }   from './address/address.component';
-import { ResultComponent }    from './result/result.component';
+
 import { BoxSelectorComponent } from './box-selector/box-selector.component';
 
 /* Routing Module */
@@ -29,7 +26,7 @@ import { ItemselectorComponent } from './itemselector/itemselector.component';
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService }],
-    declarations: [ AppComponent, NavbarComponent, PersonalComponent, WorkComponent, AddressComponent, ResultComponent, BoxSelectorComponent, ItemselectorComponent ],
+    declarations: [ AppComponent, NavbarComponent, BoxSelectorComponent, ItemselectorComponent ],
     bootstrap:    [ AppComponent ]
 })
 

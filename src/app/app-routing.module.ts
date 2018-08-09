@@ -1,10 +1,7 @@
 import { NgModule }             from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PersonalComponent }    from './personal/personal.component';
-import { WorkComponent }        from './work/work.component';
-import { AddressComponent }     from './address/address.component';
-import { ResultComponent }      from './result/result.component';
+
 
 import { WorkflowGuard }        from './workflow/workflow-guard.service';
 import { WorkflowService }      from './workflow/workflow.service';
@@ -12,19 +9,10 @@ import { BoxSelectorComponent } from './box-selector/box-selector.component';
 import { ItemselectorComponent } from './itemselector/itemselector.component';
 
 export const appRoutes: Routes = [
-    // 1st Route
+   
     { path: 'app-box-selector',  component: BoxSelectorComponent },
     { path: 'itemselector',  component: ItemselectorComponent , canActivate: [WorkflowGuard] },
-    { path: 'personal',  component: PersonalComponent },
-    // 2nd Route
-    { path: 'work',  component: WorkComponent , canActivate: [WorkflowGuard]},
-    // 3rd Route
-    { path: 'address',  component: AddressComponent, canActivate: [WorkflowGuard] },
-    // 4th Route
-    { path: 'result',  component: ResultComponent, canActivate: [WorkflowGuard] },
-    // 5th Route
-    { path: '',   redirectTo: '/personal', pathMatch: 'full' },
-    // 6th Route
+    { path: '',   redirectTo: '/app-box-selector', pathMatch: 'full' },
     { path: '**', component: BoxSelectorComponent }
 ];
 

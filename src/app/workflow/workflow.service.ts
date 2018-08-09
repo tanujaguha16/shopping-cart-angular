@@ -7,8 +7,7 @@ export class WorkflowService {
     private workflow = [
         { step: STEPS.boxselector, valid: false },
         { step: STEPS.itemselector, valid: false },
-        { step: STEPS.address, valid: false },
-        { step: STEPS.result, valid: false }
+       
     ];
     
     validateStep(step: string) {

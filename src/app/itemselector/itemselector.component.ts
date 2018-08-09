@@ -44,29 +44,29 @@ export class ItemselectorComponent implements OnInit {
         this.formDataService.setItemSelector(item);
         this.total = this.formDataService.total;
         this.items.forEach(element => {
-               if(element.name == item.name){
-                element.selected = true;
-                let item1 = this.itemData.item.filter(it => it.name === item.name)[0];
-                element.count = item1.count;
-                }
-            }); 
+           if(element.name == item.name){
+            element.selected = true;
+            let item1 = this.itemData.item.filter(it => it.name === item.name)[0];
+            element.count = item1.count;
+            }
+        }); 
     }
   remove_to_cart(item: Items) {
   
         this.formDataService.removeItemSelector(item);
         this.total = this.formDataService.total;
         this.items.forEach(element => {
-            if(element.name == item.name){
-                element.selected = true;
-                if(this.itemData.item.some(e => e.name ==item.name)){
-                let item2 = this.itemData.item.filter(it => it.name === item.name)[0];
-                element.count = item2.count;
-                }
-                else
-                element.count = 0;
-                element.selected = (element.count == 0)? false: true;
-                }
-            }); 
+          if(element.name == item.name){
+              element.selected = true;
+              if(this.itemData.item.some(e => e.name ==item.name)){
+              let item2 = this.itemData.item.filter(it => it.name === item.name)[0];
+              element.count = item2.count;
+              }
+              else
+              element.count = 0;
+              element.selected = (element.count == 0)? false: true;
+            }
+        }); 
             
     }
 
