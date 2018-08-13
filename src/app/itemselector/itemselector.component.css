@@ -20,6 +20,18 @@
     background-color: grey;
     color: white;
 }
+.small-box input {
+    position:absolute;
+    display:none;
+    color:red;
+}
+div.small-box:hover input {
+    display: block;
+    
+}
+div.small-box:hover {
+    opacity:0.5;
+}
 .semi-medium-box{
     border-bottom: 2px solid #ddd;
     height: auto;
@@ -108,4 +120,7 @@ h4.semi-medium-heading {
     color: white;
     width: 201px;
     height: 35px;
+}
+button:disabled {
+    background: #dddddd;
 }

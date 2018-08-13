@@ -15,6 +15,7 @@
 		    	<div class="col-sm-2 small-box">
 		         {{item.name}}
     			 <span class="button__badge">{{item.count}}</span>
+    			 <input class="delete" type="button" value="X" />
 		        </div>
 		     </div>
     	</div>
@@ -61,7 +62,7 @@
 				Add to box
 			</button>
 			<div class="add-box" *ngIf="itemsingle.selected">
-				<button (click)="remove_to_cart(itemsingle)" class="minus">-</button>
+				<button (click)="remove_to_cart(itemsingle)" class="minus" [disabled]="itemsingle.count == 1">-</button>
 				 <span class="count">{{itemsingle.count}}</span>
 				<button (click)="add_to_cart(itemsingle)" class="plus">+</button>	
 			</div>

@@ -17,7 +17,8 @@ export class BoxSelectorComponent implements OnInit {
 
   ngOnInit() {
          this.box_selector = this.formDataService.getBoxSelector();
-         console.log('BoxSelector feature loaded!')
+         console.log('BoxSelector feature loaded!');
+         console.log(this.box_selector);
   }
   
     goToNext(form: any) {
