@@ -73,7 +73,7 @@ export class FormDataService {
         
         var arr = this.formData.item;
         var localData = JSON.parse(localStorage.getItem("avct_item")) || [];
-        let a: Items[];
+        let a = [];
         var gettotal = JSON.parse(localStorage.getItem("total"));
         gettotal = gettotal + data.price;
         
@@ -88,8 +88,8 @@ export class FormDataService {
             }
             else{
                 a = JSON.parse(localStorage.getItem("avct_item")) || [];
-                let myObj = { count: 1, name: ''+data.name, price:data.price };
-                a.push(myObj);
+                let myobj = { count: 1, name: ''+data.name, price:data.price };
+                a.push(myobj);
                 localStorage.setItem("avct_item", JSON.stringify(a)); 
                 localData = JSON.parse(localStorage.getItem("avct_item")) || [];
             }
@@ -98,7 +98,7 @@ export class FormDataService {
             this.formData.item = localData;
            
     }
-     removeItemSelector(data: Items) {
+     removeItemSelector(data: Items,type: string) {
 
         var arr = this.formData.item;
         var localData = JSON.parse(localStorage.getItem("avct_item")) || [];
@@ -107,6 +107,8 @@ export class FormDataService {
         gettotal = gettotal - data.price;
         localData.forEach(local => {
             if(local.name == data.name){
+                if(type == 'delete')
+                    local.count = 0;
                 if(local.count >0)
                     local.count = local.count-1;
                 local.price = data.price*local.count;

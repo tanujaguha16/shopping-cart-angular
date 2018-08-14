@@ -40,9 +40,9 @@ export class ItemselectorComponent implements OnInit {
             }
         }); 
     }
-  remove_to_cart(item: Items) {
+  remove_to_cart(item: Items,type: string = '') {
   
-        this.formDataService.removeItemSelector(item);
+        this.formDataService.removeItemSelector(item,type);
         this.total = this.formDataService.total;
         this.items.forEach(element => {
           if(element.name == item.name){

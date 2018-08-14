@@ -32,6 +32,6 @@
 }
 
 .editForm input[type=radio]:checked + .main_radio .radio{
-   /* background-color:#241009 */
-   border : 2px solid rgb(255,0,0);
+    background-color:#241009 
+   /*border : 2px solid rgb(255,0,0);*/
 }

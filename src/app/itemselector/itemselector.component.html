@@ -15,7 +15,7 @@
 		    	<div class="col-sm-2 small-box">
 		         {{item.name}}
     			 <span class="button__badge">{{item.count}}</span>
-    			 <input class="delete" type="button" value="X" />
+    			 <input class="delete" type="button" value="X" (click)="remove_to_cart(item,'delete')"/>
 		        </div>
 		     </div>
     	</div>
